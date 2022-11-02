@@ -5,7 +5,7 @@ module Veeqo
     }.freeze
 
     def api_url
-      DEFAULTS[:base_url]
+      Rails.application.credentials.veeqo&.base_url || DEFAULTS[:base_url]
     end
   end
 end
